@@ -32,8 +32,8 @@ def get():
                 P(A('Nos tarifs', href='/nous_tarifs')),
                 P(A('Les spots', href='/spots')),
                 P(A('Physique du kite', href='/physique')),
-                P(A('Systèmes de sécurité sur un kite', href='/sécurité_kite')),
-                P(A('Règles de sécurité', href='/sécurité_règles')),
+                P(A('Systèmes de sécurité sur un kite', href='/securite_kite')),
+                P(A('Règles de sécurité', href='/securite_regles')),
                 P(A('Assurance', href='/assurance')),
                 P(A('Videos', href='/videos')),
                 P(A('Photos', href='/photos')), 
@@ -194,7 +194,7 @@ def get():
                 )
             )
 
-@rt('/sécurité_kite')
+@rt('/securite_kite')
 def get():
     s1 = "En kite, à l'inverse de la planche à voile, le rider est toujours connecté à son aile.\
          Pour cela, il existe par ordre croissant d'urgence, 3 systèmes de sécurité."
@@ -226,7 +226,7 @@ def get():
                 )
             )
 
-@rt('/sécurité_règles')
+@rt('/securite_regles')
 def get():
     s1 = "Un peu comme le parapente, la majorité des accidents ont lieu en phase \
         de décollage ou d'attérissage. En suivant les 5 règles \
