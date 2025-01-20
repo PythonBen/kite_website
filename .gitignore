@@ -1,2 +1,4 @@
 .vercel
 .sesskey
+.venv
+pyvenv.cfg
