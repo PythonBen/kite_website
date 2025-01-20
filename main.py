@@ -7,7 +7,7 @@ hdrs = (
 
 cwd = Path.cwd()
 
-path_data = cwd/"kite_website/data"
+path_data = cwd/"data"
 
 app, rt = fast_app(hdrs=hdrs, static_path=path_data)
 
