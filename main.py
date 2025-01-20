@@ -7,7 +7,8 @@ from pathlib import Path
 hdrs=(picolink)
 cwd = Path.cwd()
 
-path_data = cwd/"public/data"
+#path_data = cwd/"public/data"
+path_data = Path("public/data")
 print(f"path_data:{path_data}")
 #app, rt = fast_app(hdrs=hdrs, static_path=path_data)
 app, rt = fast_app(hdrs=hdrs, static_path=path_data)
