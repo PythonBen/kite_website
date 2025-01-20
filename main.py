@@ -13,13 +13,13 @@ print(f"path_data:{path_data}")
 app, rt = fast_app(hdrs=hdrs, static_path=path_data)
 
 logo_large = Img(
-                src="logos/logo2.jpg",  # Replace with your logo URL
+                src="/logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 200px;"
                 )
 
 logo_small = Img(
-                src="logos/logo2.jpg",  # Replace with your logo URL
+                src="/logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 100px;"
                 )
@@ -266,7 +266,7 @@ def get():
             )
 @rt('/videos')
 def get():
-    video_file_name = "videos/pav_ben.mp4"
+    video_file_name = "/videos/pav_ben.mp4"
 
     return Titled(
             "Videos",
@@ -306,7 +306,7 @@ def get():
                 }"""
                 ),
             Figure(
-                Img(src="photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                Img(src="/photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
                 Figcaption("Ceci est une casio")
             ),
             P(A('Sommaire', href='/')),
