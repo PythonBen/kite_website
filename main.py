@@ -11,17 +11,28 @@ hdrs=(picolink)
 path_data = Path("public/data")
 print(f"path_data:{path_data}")
 #app, rt = fast_app(hdrs=hdrs, static_path=path_data)
+<<<<<<< HEAD
 #app, rt = fast_app(hdrs=hdrs, static_path=path_data)
 app, rt = fast_app(hdrs=hdrs)
 logo_large = Img(
                 src="logos/logo2.jpg",  # Replace with your logo URL
+=======
+app, rt = fast_app(hdrs=hdrs, static_path=path_data)
+
+logo_large = Img(
+                src="/logos/logo2.jpg",  # Replace with your logo URL
+>>>>>>> parent of 93bc642 (changing path try)
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 100px;",
                 cls="responsive-img"
                 )
 
 logo_small = Img(
+<<<<<<< HEAD
                 src="logos/logo2.jpg",  # Replace with your logo URL
+=======
+                src="/logos/logo2.jpg",  # Replace with your logo URL
+>>>>>>> parent of 93bc642 (changing path try)
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 50px;",
                 cls="responsive-img"
@@ -269,7 +280,7 @@ def get():
             )
 @rt('/videos')
 def get():
-    video_file_name = path_data/"videos/pav_ben.mp4"
+    video_file_name = "/videos/pav_ben.mp4"
 
     return Titled(
             "Videos",
@@ -310,7 +321,11 @@ def get():
                 }"""
                 ),
             Figure(
+<<<<<<< HEAD
                 Img(src="photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;", cls="responsive-img"),
+=======
+                Img(src="/photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+>>>>>>> parent of 93bc642 (changing path try)
                 Figcaption("Ceci est une casio")
             ),
             P(A('Sommaire', href='/')),
@@ -339,6 +354,7 @@ def get():
                     }"""
                     ),
                 Figure(
+<<<<<<< HEAD
                     Img(src="logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;", cls="responsive-img"),
                     Figcaption("Mon logo1")
                 ),
@@ -348,6 +364,17 @@ def get():
                 ),
                 Figure(
                     Img(src="logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;",cls="responsive-img"),
+=======
+                    Img(src="logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Figcaption("Mon logo1")
+                ),
+                Figure(
+                    Img(src="logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Figcaption("Mon logo2")
+                ),
+                Figure(
+                    Img(src="logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;"),
+>>>>>>> parent of 93bc642 (changing path try)
                     Figcaption("Mon logo3")
                 ),
                 P(A('Sommaire', href='/')),
