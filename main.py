@@ -11,16 +11,16 @@ cwd = Path.cwd()
 path_data = Path("public/data")
 print(f"path_data:{path_data}")
 #app, rt = fast_app(hdrs=hdrs, static_path=path_data)
-app, rt = fast_app(hdrs=hdrs, static_path=path_data)
-
+#app, rt = fast_app(hdrs=hdrs,static_path=path_data)
+app, rt = fast_app(hdrs=hdrs)
 logo_large = Img(
-                src="/logos/logo2.jpg",  # Replace with your logo URL
+                src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 200px;"
                 )
 
 logo_small = Img(
-                src="/logos/logo2.jpg",  # Replace with your logo URL
+                src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 100px;"
                 )
@@ -267,7 +267,7 @@ def get():
             )
 @rt('/videos')
 def get():
-    video_file_name = "/videos/pav_ben.mp4"
+    video_file_name = path_data/"videos/pav_ben.mp4"
 
     return Titled(
             "Videos",
@@ -307,7 +307,7 @@ def get():
                 }"""
                 ),
             Figure(
-                Img(src="/photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                Img(src=path_data/"photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
                 Figcaption("Ceci est une casio")
             ),
             P(A('Sommaire', href='/')),
@@ -336,15 +336,15 @@ def get():
                     }"""
                     ),
                 Figure(
-                    Img(src="logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src=path_data/"logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;"),
                     Figcaption("Mon logo1")
                 ),
                 Figure(
-                    Img(src="logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src=path_data/"logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;"),
                     Figcaption("Mon logo2")
                 ),
                 Figure(
-                    Img(src="logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src=path_data/"logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;"),
                     Figcaption("Mon logo3")
                 ),
                 P(A('Sommaire', href='/')),
