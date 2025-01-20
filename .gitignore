@@ -2,3 +2,4 @@
 .sesskey
 .venv
 pyvenv.cfg
+__pycache__

@@ -46,16 +46,6 @@ def get():
                 style="padding-top: 10px;"
                )
 
-
-
-#Div(
-#            Img(
-#                src="https://via.placeholder.com/100",  # Replace with your logo URL
-#                alt="Logo",
-#                style="position: absolute; top: 20px; right: 20px; width: 100px;"
-#            ),
-#            Div("Welcome to the page!", style="padding-top: 100px;")
-#        )
                 
 @rt('/votre_moniteur')
 def get():
