@@ -8,7 +8,7 @@ hdrs = (
 cwd = Path.cwd()
 
 path_data = cwd/"data/"
-print(f"path_data:{path_data}")
+#print(f"path_data:{path_data}")
 app, rt = fast_app(hdrs=hdrs, static_path=path_data)
 
 logo_large = Img(
@@ -58,8 +58,7 @@ def get():
              BPJEPS GADA (Glisses Aérotractée et Disciplines Associées) à Quiberon"
     
     s3 = "Pourquoi ServiKite ?, je vous laisse deviner...,)"
-         #c'est par respect pour mon père qui avait une entreprise appelée Serviver"
-
+         
     return (
             Title("A propos de nous"), 
             Div(
