@@ -12,14 +12,14 @@ app, rt = fast_app(hdrs=hdrs)
 logo_large = Img(
                 src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
-                style="position: absolute; top: 20px; right: 20px; width: 100px;",
+                style="position: absolute; top: 20px; right: 20px; width: 80px;",
                 cls="responsive-img"
                 )
 
 logo_small = Img(
                 src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
-                style="position: absolute; top: 20px; right: 20px; width: 50px;",
+                style="position: absolute; top: 20px; right: 20px; width: 40px;",
                 cls="responsive-img"
                 )
 
@@ -39,7 +39,7 @@ def get():
                 P(A('Photos', href='/photos')), 
                 P(A('logos', href='/logos')), 
                 logo_large,
-                style="padding-top: 10px;"
+                style="padding-top: 50px;"
                )
 
                 
