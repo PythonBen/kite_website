@@ -39,7 +39,7 @@ def get():
                 P(A('Photos', href='/photos')), 
                 P(A('logos', href='/logos')), 
                 logo_large,
-                style="padding-top: 50px;"
+                style="padding-top: 60px;"
                )
 
                 
