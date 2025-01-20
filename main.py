@@ -1,24 +1,25 @@
 from fasthtml.common import *
 from pathlib import Path
 
-#hdrs = (
-#    Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
-#)
-hdrs=(picolink)
+hdrs = (
+    Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
+)
+#hdrs=(picolink)
 cwd = Path.cwd()
 
 path_data = cwd/"data"
-#print(f"path_data:{path_data}")
-app, rt = fast_app(hdrs=hdrs, static_path=path_data)
+print(f"path_data:{path_data}")
+#app, rt = fast_app(hdrs=hdrs, static_path=path_data)
+app, rt = fast_app(static_path=path_data)
 
 logo_large = Img(
-                src="/logos/logo2.jpg",  # Replace with your logo URL
+                src=path_data/"/logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 200px;"
                 )
 
 logo_small = Img(
-                src="/logos/logo2.jpg",  # Replace with your logo URL
+                src=path_data/"/logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
                 style="position: absolute; top: 20px; right: 20px; width: 100px;"
                 )
@@ -272,7 +273,7 @@ def get():
             Div(
                 Figure(
                    Video(
-                       Source(src=video_file_name ,type="video/mp4"),
+                       Source(src=path_data/video_file_name ,type="video/mp4"),
                        controls=True,
                        width=1024,
                        height=768,
@@ -305,7 +306,7 @@ def get():
                 }"""
                 ),
             Figure(
-                Img(src="/photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                Img(src=path_data/"/photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
                 Figcaption("Ceci est une casio")
             ),
             P(A('Sommaire', href='/')),
@@ -334,15 +335,15 @@ def get():
                     }"""
                     ),
                 Figure(
-                    Img(src="/logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src=path_data/"/logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;"),
                     Figcaption("Mon logo1")
                 ),
                 Figure(
-                    Img(src="/logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src=path_data/"/logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;"),
                     Figcaption("Mon logo2")
                 ),
                 Figure(
-                    Img(src="/logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src=path_data/"/logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;"),
                     Figcaption("Mon logo3")
                 ),
                 P(A('Sommaire', href='/')),
