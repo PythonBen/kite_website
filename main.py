@@ -1,10 +1,10 @@
 from fasthtml.common import *
 from pathlib import Path
 
-hdrs = (
-    Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
-)
-
+#hdrs = (
+#    Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
+#)
+hdrs=(picolink)
 cwd = Path.cwd()
 
 path_data = cwd/"data/"
@@ -97,8 +97,8 @@ def get():
 def get():
     
     s1 = "Le prix est donnée par le calcul suivant: $$P = Ph * T/N $$"
-    s2 = "avec P: le prix par personne, Ph = {120, 100}: le prix horaire en haute et basse saison \
-         N le nombre de stagiaires (de 1 à 4) \
+    s2 = "avec P: le prix par personne, Ph = {120, 100}: le prix horaire en haute et basse saison, \
+         N le nombre de stagiaires (de 1 à 4)  et T la durée du cours (3h).\
         Voici un tableau récapitulatif ci dessous:"
     html_table = """
                     <div class="center">
