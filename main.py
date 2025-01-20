@@ -5,7 +5,11 @@ hdrs = (
     Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
 )
 
-app, rt = fast_app(hdrs=hdrs, static_path="data")
+cwd = Path.cwd()
+
+path_data = cwd/"kite_website/data"
+
+app, rt = fast_app(hdrs=hdrs, static_path=path_data)
 
 logo_large = Img(
                 src="/logos/logo2.jpg",  # Replace with your logo URL
