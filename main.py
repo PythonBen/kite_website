@@ -7,22 +7,23 @@ from pathlib import Path
 hdrs=(picolink)
 cwd = Path.cwd()
 
-#path_data = cwd/"public/data"
-path_data = Path("public/data")
+path_data = cwd/"public/data"
 print(f"path_data:{path_data}")
 #app, rt = fast_app(hdrs=hdrs, static_path=path_data)
-#app, rt = fast_app(hdrs=hdrs,static_path=path_data)
-app, rt = fast_app(hdrs=hdrs)
+app, rt = fast_app(hdrs=hdrs, static_path=path_data)
+
 logo_large = Img(
-                src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
+                src="logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
-                style="position: absolute; top: 20px; right: 20px; width: 200px;"
+                style="position: absolute; top: 20px; right: 20px; width: 100px;",
+                cls="responsive-img"
                 )
 
 logo_small = Img(
-                src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
+                src="logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
-                style="position: absolute; top: 20px; right: 20px; width: 100px;"
+                style="position: absolute; top: 20px; right: 20px; width: 50px;",
+                cls="responsive-img"
                 )
 #app, rt = fast_app(hdrs=hdrs)
 #css = Style(':root {--pico-font-size:90%,--pico-font-family: Pacifico, cursive;}')
@@ -267,7 +268,7 @@ def get():
             )
 @rt('/videos')
 def get():
-    video_file_name = path_data/"videos/pav_ben.mp4"
+    video_file_name = "videos/pav_ben.mp4"
 
     return Titled(
             "Videos",
@@ -276,8 +277,9 @@ def get():
                    Video(
                        Source(src=video_file_name ,type="video/mp4"),
                        controls=True,
-                       width=1024,
-                       height=768,
+                       style="width: 100%; height: auto;",
+                       #width=1024,
+                       #height=768,
                         ),
                        Figcaption("Planche à voile presqu'ile de Giens, pointe de l'Esterelle, juin 2024")
                        ),
@@ -307,7 +309,7 @@ def get():
                 }"""
                 ),
             Figure(
-                Img(src=path_data/"photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                Img(src="photos/calculatrice2.jpg", alt="Example image", style="width: 100%; height: auto;", cls="responsive-img"),
                 Figcaption("Ceci est une casio")
             ),
             P(A('Sommaire', href='/')),
@@ -336,15 +338,15 @@ def get():
                     }"""
                     ),
                 Figure(
-                    Img(src=path_data/"logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src="logos/logo1.jpg", alt="Example image", style="width: 100%; height: auto;", cls="responsive-img"),
                     Figcaption("Mon logo1")
                 ),
                 Figure(
-                    Img(src=path_data/"logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src="logos/logo2.jpg", alt="Example image", style="width: 100%; height: auto;",cls="responsive-img"),
                     Figcaption("Mon logo2")
                 ),
                 Figure(
-                    Img(src=path_data/"logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;"),
+                    Img(src="logos/logo3.jpg", alt="Example image", style="width: 100%; height: auto;",cls="responsive-img"),
                     Figcaption("Mon logo3")
                 ),
                 P(A('Sommaire', href='/')),
