@@ -5,13 +5,14 @@ from pathlib import Path
 #    Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
 #)
 hdrs=(picolink)
-cwd = Path.cwd()
+#cwd = Path.cwd()
 
-path_data = cwd/"public/data"
+#path_data = cwd/"public/data"
+path_data = Path("public/data")
 print(f"path_data:{path_data}")
 #app, rt = fast_app(hdrs=hdrs, static_path=path_data)
-app, rt = fast_app(hdrs=hdrs, static_path=path_data)
-
+#app, rt = fast_app(hdrs=hdrs, static_path=path_data)
+app, rt = fast_app(hdrs=hdrs)
 logo_large = Img(
                 src="logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
@@ -268,7 +269,7 @@ def get():
             )
 @rt('/videos')
 def get():
-    video_file_name = "videos/pav_ben.mp4"
+    video_file_name = path_data/"videos/pav_ben.mp4"
 
     return Titled(
             "Videos",
