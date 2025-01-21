@@ -1,9 +1,6 @@
 from fasthtml.common import *
 from pathlib import Path
 
-#hdrs = (
-#    Script(src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"),
-#)
 hdrs=(picolink)
 
 path_data = Path("public/data")
@@ -12,24 +9,25 @@ app, rt = fast_app(hdrs=hdrs)
 logo_large = Img(
                 src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
-                style="position: absolute; top: 20px; right: 20px; width: 80px;",
+                style="position: absolute; top: 20px; right: 20px; width: 90px;",
                 cls="responsive-img"
                 )
 
 logo_small = Img(
                 src=path_data/"logos/logo2.jpg",  # Replace with your logo URL
                 alt="Logo",
-                style="position: absolute; top: 20px; right: 20px; width: 40px;",
+                style="position: absolute; top: 20px; right: 20px; width: 50px;",
                 cls="responsive-img"
                 )
 
 @rt('/')
 def get():
-    return Div (
-                P(H3("Bienvenue chez ServiKite, à votre service pour apprendre le kite")),
+    return Titled("ServiKite",
+            Div (
+                P(H3("Bienvenue, à votre service pour apprendre le kite")),
                 P(A('Votre moniteur', href='/votre_moniteur')),
                 P(A('Nos cours', href='/nos_cours')),
-                P(A('Nos tarifs', href='/nous_tarifs')),
+                P(A('Nos tarifs', href='/nos_tarifs')),
                 P(A('Les spots', href='/spots')),
                 P(A('Physique du kite', href='/physique')),
                 P(A('Systèmes de sécurité sur un kite', href='/securite_kite')),
@@ -37,12 +35,12 @@ def get():
                 P(A('Assurance', href='/assurance')),
                 P(A('Videos', href='/videos')),
                 P(A('Photos', href='/photos')), 
-                P(A('logos', href='/logos')), 
+                P(A('Logos', href='/logos')), 
+                P(A('Contact', href='/contact')),
                 logo_large,
                 style="padding-top: 60px;"
                )
-
-                
+            )
 @rt('/votre_moniteur')
 def get():
 
@@ -56,7 +54,7 @@ def get():
     s3 = "Pourquoi ServiKite ?, je vous laisse deviner...,)"
          
     return (
-            Title("A propos de nous"), 
+            #Title("A propos de nous"), 
             Div(
                 H1('Votre moniteur'),
                 P(s1),
@@ -70,7 +68,6 @@ def get():
                 )
 
            )
-    
 @rt('/nos_cours')
 def get():
 
@@ -78,7 +75,6 @@ def get():
         Les cours sont formés de 1 à 4 stagiaires et peuvent etre dispensés en Francais, Anglais ou Allemand"
     
     return (
-            Title("Nos cours"),
             Div(
                 H1('Nos cours'),
                 P(s1),
@@ -88,11 +84,10 @@ def get():
                 style="padding-top: 10px;"
                 )
             )
-
-@rt('/nous_tarifs')
+@rt('/nos_tarifs')
 def get():
     
-    s1 = "Le prix est donnée par le calcul suivant: $$P = Ph * T/N $$"
+    s1 = "Le prix est donnée par le calcul suivant: P = Ph * T / N"
     s2 = "avec P: le prix par personne, Ph = {120, 100}: le prix horaire en haute et basse saison, \
          N le nombre de stagiaires (de 1 à 4)  et T la durée du cours (3h).\
         Voici un tableau récapitulatif ci dessous:"
@@ -132,7 +127,7 @@ def get():
                 </div>
                 """
     return (
-            Title("Nos tarifs"),
+            
             Div(
                 H1('Nos tarifs'),
                 P(s1),
@@ -143,13 +138,12 @@ def get():
                 cls="container"
                 )
             )
-
 @rt('/spots')
 def get():
     s1 ="Le spot est choisit en fonction des conditions météo, on choisira toujours un spot avec un vent on shore ou side on"
     
     return (
-            Title("Les spots"),
+           
             Div(
                H1('Les spots'),
                P(s1),
@@ -158,7 +152,6 @@ def get():
                cls="container"
                )
             )
-
 @rt('/physique')
 def get():
     s1 = "Le kitesurf est la combinaison d'un cerf volant et d'un engin qui glisse sur l'eau. \
@@ -172,7 +165,6 @@ def get():
          à la base du tous les systèmes à voile (bateaux, planche à voile, kite et wing)."
 
     return (
-            Title("Physique du kite"),
             Div(
                 H1('Physique du kite'),
                 P(s1),
@@ -202,7 +194,6 @@ def get():
          faut choisir entre sa vie ou son matériel...."
     
     return (
-            Title("Systèmes de sécurité sur un kite"),
             Div(
                 H1('Systèmes de sécurité sur un kite'),
                 P(s1),
@@ -233,9 +224,8 @@ def get():
     </ul>"""
 
     return (
-            Title("Accidentologie"),
             Div(
-                H1('Accidentologie'),
+                H1('Règles de base pour une pratique en sécurité'),
                 P(s1),
                 P(NotStr(html_code)),
                 P(A('Sommaire', href='/')),
@@ -250,7 +240,6 @@ def get():
             une licence à la FFV, FFVL ou AFK"
 
     return (
-            Title("Assurance"),
             Div(
                 H1('Assurance'),
                 P(s1),
@@ -263,8 +252,7 @@ def get():
 def get():
     video_file_name = path_data/"videos/pav_ben.mp4"
 
-    return Titled(
-            "Videos",
+    return Titled("Videos",
             Div(
                 Figure(
                    Video(
@@ -278,14 +266,12 @@ def get():
                 logo_small,
                 cls="container",
                 )
-            
-            )
+               )
 @rt('/photos')
 def get():
     
-    return Titled(
-        "Photos",
-        Div(
+    return Titled("Photos",
+            Div(
             Style("""
                 figure {
                     display: inline-block;
@@ -306,10 +292,9 @@ def get():
             P(A('Sommaire', href='/')),
             logo_small,
             cls="container",
-        )
-    )
+            )
+            )
  
-
 @rt('/logos')
 def get():
     return Titled(
@@ -342,7 +327,18 @@ def get():
                 ),
                 P(A('Sommaire', href='/')),
                 cls="container",
-            )
-        )
+              )
+                )
 
+@rt('/contact')
+def get():
+    return Titled("Contact",
+            Div(
+                P("Email: test@example.com"),
+                P("tél:06 00 00 00 00"),
+                P(A('Sommaire', href='/')),
+                logo_small,
+                cls="container"
+               )
+                )
 serve()
