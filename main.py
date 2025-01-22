@@ -90,13 +90,14 @@ def get():
     s1 = "Le prix est donnée par le calcul suivant: P = Ph * T / N"
     s2 = "avec P: le prix par personne, Ph = {120, 100}: le prix horaire en haute et basse saison, \
          N le nombre de stagiaires (de 1 à 4)  et T la durée du cours (3h).\
-        Voici un tableau récapitulatif ci dessous:"
+        Voici un tableau récapitulatif ci dessous:" 
+    s3 = "Une séance dure 3h, voici le tableau des tarifs ci dessous:"
     html_table = """
                     <div class="center">
                 <table>
                 <thead>
                 <tr>
-                <th style="text-align: center;">Nombre de stagiaires</th>
+                <th style="text-align: center;">Nombre de séances</th>
                 <th style="text-align: center;">Prix basse saison (&#8364)</th>
                 <th style="text-align: center;">Prix haute saison (&#8364)</th>
                 </tr>
@@ -104,23 +105,23 @@ def get():
                 <tbody>
                 <tr>
                 <td style="text-align: center;">1</td>
-                <td style="text-align: center;">300</td>
-                <td style="text-align: center;">360</td>
+                <td style="text-align: center;">100</td>
+                <td style="text-align: center;">130</td>
                 </tr>
                 <tr>
                 <td style="text-align: center;">2</td>
-                <td style="text-align: center;">150</td>
-                <td style="text-align: center;">180</td>
+                <td style="text-align: center;">200</td>
+                <td style="text-align: center;">250</td>
                 </tr>
                 <tr>
                 <td style="text-align: center;">3</td>
-                <td style="text-align: center;">100</td>
-                <td style="text-align: center;">120</td>
+                <td style="text-align: center;">280</td>
+                <td style="text-align: center;">370</td>
                 </tr>
                 <tr>
                 <td style="text-align: center;">4</td>
-                <td style="text-align: center;">75</td>
-                <td style="text-align: center;">90</td>
+                <td style="text-align: center;">370</td>
+                <td style="text-align: center;">460</td>
                 </tr>
                 </tbody>
                 </table>
@@ -130,8 +131,7 @@ def get():
             
             Div(
                 H1('Nos tarifs'),
-                P(s1),
-                P(s2),
+                P(s3),
                 P(NotStr(html_table)),
                 P(A('Sommaire', href='/')),
                 logo_small,
@@ -143,7 +143,6 @@ def get():
     s1 ="Le spot est choisit en fonction des conditions météo, on choisira toujours un spot avec un vent on shore ou side on"
     
     return (
-           
             Div(
                H1('Les spots'),
                P(s1),
